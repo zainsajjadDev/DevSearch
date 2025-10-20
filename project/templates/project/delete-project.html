@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block main %}
+
+<div >
+<h2 class="text-center my-md">Are you sure you want to delete 
+        "{{object.name}}" project?</h2>
+    <form method="POST" class="text-center" >
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger btn--lg" value="Delete"/>
+        <a href="{{request.GET.next}}" class="btn btn--sub btn--lg">Go Back</a>
+    </form>
+{% endblock main %}
